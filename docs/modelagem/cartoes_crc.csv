@@ -1,0 +1,10 @@
+﻿Classe;Responsabilidades;Colaboradores
+Usuario;"Guardar dados pessoais e o status do vínculo; informar se está ativo";TipoUsuario, PerfilAcesso, Carteirinha, Biometria, Operador
+Aluno;"Guardar RA, curso, turma e datas de matrícula e vencimento; informar se o vínculo está vigente";Usuario, Curso, Turma
+Carteirinha;"Guardar código de barras, imagem, validade e situação; informar se é válida";Usuario
+Biometria;Guardar o template biométrico cifrado e a data do consentimento;Usuario
+Operador;"Guardar o login, a senha em hash e o papel; autenticar o funcionário no sistema";Usuario
+PerfilAcesso;Agrupar permissões e informar se um local é permitido;Usuario, Local
+Local;Identificar o ambiente e o seu tipo;TipoLocal, Dispositivo, PerfilAcesso
+Dispositivo;"Identificar o leitor, o seu status e o local de instalação; informar se está operante";Local, RegistroAcesso
+RegistroAcesso;Guardar cada tentativa (data/hora, método, resultado e motivo);Usuario, Dispositivo, Local

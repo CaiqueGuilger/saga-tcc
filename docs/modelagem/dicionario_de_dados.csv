@@ -1,0 +1,63 @@
+﻿Tabela;Coluna;Tipo;Restrições;Descrição
+tipo_usuario;id;INT;PK, AUTO_INCREMENT;Identificador do tipo
+tipo_usuario;descricao;VARCHAR(40);NOT NULL, UNIQUE;Aluno, Professor, Funcionário ou Terceirizado
+perfil_acesso;id;INT;PK, AUTO_INCREMENT;Identificador do perfil
+perfil_acesso;nome;VARCHAR(60);NOT NULL, UNIQUE;Nome do perfil de acesso
+perfil_acesso;descricao;VARCHAR(200);NULL;Finalidade do perfil
+curso;id;INT;PK, AUTO_INCREMENT;Identificador do curso
+curso;nome;VARCHAR(100);NOT NULL, UNIQUE;Nome do curso
+turma;id;INT;PK, AUTO_INCREMENT;Identificador da turma
+turma;curso_id;INT;FK → curso.id, NOT NULL;Curso da turma
+turma;nome;VARCHAR(40);NOT NULL;Identificação da turma
+turma;semestre;VARCHAR(10);NOT NULL;Semestre letivo, ex.: 2026.2
+usuario;id;INT;PK, AUTO_INCREMENT;Identificador do usuário
+usuario;cpf;CHAR(11);NOT NULL, UNIQUE;CPF, somente dígitos
+usuario;nome;VARCHAR(120);NOT NULL;Nome completo
+usuario;telefone;VARCHAR(15);NULL;Telefone/celular
+usuario;email_institucional;VARCHAR(120);NOT NULL, UNIQUE;E-mail institucional
+usuario;data_nascimento;DATE;NOT NULL;Data de nascimento
+usuario;status;VARCHAR(10);NOT NULL;Ativo ou Inativo (vínculo)
+usuario;foto;BLOB/URL;NULL;Foto 3x4 do usuário
+usuario;tipo_usuario_id;INT;FK → tipo_usuario.id, NOT NULL;Ocupação do usuário
+usuario;perfil_acesso_id;INT;FK → perfil_acesso.id, NOT NULL;Perfil de acesso
+aluno;usuario_id;INT;PK, FK → usuario.id;Especialização de usuário
+aluno;ra;VARCHAR(15);NOT NULL, UNIQUE;Registro do aluno
+aluno;curso_id;INT;FK → curso.id, NOT NULL;Curso do aluno
+aluno;turma_id;INT;FK → turma.id, NOT NULL;Turma do aluno
+aluno;data_matricula;DATE;NOT NULL;Data da matrícula
+aluno;data_vencimento;DATE;NOT NULL;Fim da validade do vínculo
+carteirinha;id;INT;PK, AUTO_INCREMENT;Identificador da carteirinha
+carteirinha;usuario_id;INT;FK → usuario.id, NOT NULL;Titular
+carteirinha;codigo_barras;VARCHAR(40);NOT NULL, UNIQUE;Código de barras/QR Code
+carteirinha;imagem;BLOB/URL;NULL;Imagem do código de barras
+carteirinha;validade;DATE;NOT NULL;Validade da carteirinha
+carteirinha;situacao;VARCHAR(12);NOT NULL;Ativa, Bloqueada ou Cancelada
+biometria;id;INT;PK, AUTO_INCREMENT;Identificador do registro biométrico
+biometria;usuario_id;INT;FK → usuario.id, NOT NULL;Titular
+biometria;template_biometrico;VARBINARY;NOT NULL;Template criptografado (nunca a imagem da digital)
+biometria;data_cadastro;DATETIME;NOT NULL;Data do cadastro/consentimento
+tipo_local;id;INT;PK, AUTO_INCREMENT;Identificador do tipo de local
+tipo_local;descricao;VARCHAR(40);NOT NULL, UNIQUE;Sala, Laboratório, Portão, Biblioteca
+local_acesso;id;INT;PK, AUTO_INCREMENT;Identificador do local
+local_acesso;nome;VARCHAR(80);NOT NULL, UNIQUE;Nome do local, ex.: Laboratório 2
+local_acesso;tipo_local_id;INT;FK → tipo_local.id, NOT NULL;Tipo do local
+dispositivo;id;INT;PK, AUTO_INCREMENT;Identificador do dispositivo
+dispositivo;modelo;VARCHAR(60);NOT NULL;Modelo do leitor
+dispositivo;numero_serie;VARCHAR(40);NOT NULL, UNIQUE;Número de série
+dispositivo;status;VARCHAR(12);NOT NULL;Operante ou Não operante
+dispositivo;local_id;INT;FK → local_acesso.id, NOT NULL;Local de instalação
+permissao_acesso;perfil_acesso_id;INT;PK, FK → perfil_acesso.id;Perfil autorizado
+permissao_acesso;local_id;INT;PK, FK → local_acesso.id;Local liberado
+registro_acesso;id;BIGINT;PK, AUTO_INCREMENT;Identificador do registro
+registro_acesso;data_hora;DATETIME;NOT NULL, INDEX;Momento da tentativa
+registro_acesso;usuario_id;INT;FK → usuario.id, NULL;Usuário (nulo se não identificado)
+registro_acesso;dispositivo_id;INT;FK → dispositivo.id, NOT NULL;Leitor que captou
+registro_acesso;local_id;INT;FK → local_acesso.id, NOT NULL;Local da tentativa
+registro_acesso;metodo;VARCHAR(12);NOT NULL;Código de barras ou Biometria
+registro_acesso;resultado;VARCHAR(10);NOT NULL;Liberado, Negado ou Erro
+registro_acesso;motivo;VARCHAR(80);NULL;Motivo da negação ou do erro
+operador;id;INT;PK, AUTO_INCREMENT;Identificador do operador
+operador;usuario_id;INT;FK → usuario.id, NOT NULL, UNIQUE;Funcionário vinculado
+operador;login;VARCHAR(40);NOT NULL, UNIQUE;Login do sistema
+operador;senha_hash;VARCHAR(255);NOT NULL;Hash da senha (bcrypt)
+operador;papel;VARCHAR(20);NOT NULL;Segurança, Secretaria, TI, Diretoria ou Portaria
