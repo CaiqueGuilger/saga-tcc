@@ -1,0 +1,23 @@
+﻿Numero;Requisito;Prioridade
+RF001;Ler o código de barras da carteirinha;Alta
+RF002;Ler a biometria do usuário;Alta
+RF003;Validar autenticidade e situação da carteirinha;Alta
+RF004;Validar situação ativa do cadastro do usuário;Alta
+RF005;Liberar o acesso após validação;Alta
+RF006;Registrar todas as tentativas (data, hora, usuário, dispositivo, local);Alta
+RF007;Controlar acesso a dependências específicas;Média
+RF008;Validar permissões por perfil e local;Alta
+RF009;Emitir alertas sonoros e visuais para liberado/negado;Alta
+RF010;Gerar relatórios com filtros por período, dispositivo e local;Média
+RF011;Gerenciar cadastro de usuários (RA, curso, turma, datas, status);Alta
+RF012;Gerenciar cadastro de dispositivos de leitura;Média
+RF013;Gerenciar perfis de acesso dos usuários;Média
+RF014;Gerenciar tipos de usuários;Média
+RF015;Gerenciar cursos;Baixa
+RF016;Incluir dados da carteirinha no cadastro/atualização;Média
+RF017;Gerenciar cadastro de locais de acesso;Média
+RF018;Gerenciar tipos de locais de acesso;Baixa
+RF019;Pesquisar/filtrar listagens (CPF, RA, e-mail institucional);Média
+RF020;Exibir painel de acessos em tempo real;Média
+RF021;Upload/geração da imagem do código de barras;Média
+RF022;Upload da biometria do usuário;Média

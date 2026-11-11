@@ -1,0 +1,11 @@
+﻿Numero;Requisito de usuario;Input;Output
+RU001;Como aluno ou funcionário, quero entrar no campus apenas apresentando a minha carteirinha, sem filas.;Carteirinha (código de barras);Acesso liberado ou negado, com alerta
+RU002;Como aluno ou funcionário, quero entrar usando a minha biometria, mesmo sem a carteirinha.;Impressão digital;Acesso liberado ou negado, com alerta
+RU003;Como usuário, quero saber imediatamente por que o meu acesso foi negado ou a leitura falhou.;Leitura recusada ou sem permissão;Mensagem de erro/negado com orientação
+RU004;Como vigilante, quero ver, a cada leitura, o nome, a foto e a ocupação da pessoa para conferir a identidade.;Leitura realizada;Alerta visual e sonoro com dados do usuário
+RU005;Como coordenador de segurança, quero acompanhar entradas e saídas em tempo real.;Registros de acesso;Painel em tempo real com contadores
+RU006;Como coordenador de segurança, quero definir quais perfis podem acessar quais locais.;Perfil e local;Permissões salvas e aplicadas
+RU007;Como secretaria acadêmica, quero cadastrar e atualizar alunos, carteirinhas e biometrias.;Dados do usuário, foto, código de barras, digital;Cadastro atualizado e consultável
+RU008;Como equipe de TI, quero cadastrar e acompanhar os leitores e os locais onde estão instalados.;Dados do dispositivo e do local;Cadastro e status operante/não operante
+RU009;Como diretoria acadêmica, quero relatórios de acesso por período, dispositivo e local.;Filtros de período, dispositivo e local;Relatório consultável e exportável
+RU010;Como gestão, quero auditar todas as tentativas de acesso, inclusive as negadas.;Consulta ao histórico;Registros com data, hora, usuário, dispositivo e local

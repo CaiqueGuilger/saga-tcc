@@ -1,0 +1,11 @@
+﻿Numero;Requisito;Prioridade
+RNF001;Desempenho: a validação de uma leitura e a exibição do alerta devem ocorrer em até 2 segundos em condições normais de rede.;Alta
+RNF002;Disponibilidade: o sistema deve operar durante todo o horário de funcionamento do campus, com plano de contingência para queda de rede nos leitores.;Alta
+RNF003;"Segurança: operadores devem se autenticar; senhas armazenadas apenas como hash; tráfego protegido por HTTPS.";Alta
+RNF004;LGPD: dados biométricos armazenados apenas como template cifrado, mediante consentimento, com finalidade e acesso restritos.;Alta
+RNF005;Auditoria: registros de acesso e de alterações cadastrais devem ser imutáveis e consultáveis.;Alta
+RNF006;"Usabilidade: alertas com cores e sons distintos para liberado, negado e erro; telas claras e consistentes, operáveis sem treinamento extenso.";Média
+RNF007;Compatibilidade: interface web compatível com os navegadores atuais em resolução de desktop (protótipos em 1600 x 900).;Média
+RNF008;Escalabilidade: suportar 1.150 usuários e picos de leitura nos horários de entrada e saída.;Média
+RNF009;Manutenibilidade: arquitetura MVC em camadas e código versionado em Git.;Média
+RNF010;Portabilidade do banco: uso de SQL padrão, com implementação no MySQL, de modo a facilitar uma eventual migração de SGBD.;Baixa

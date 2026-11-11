@@ -1,0 +1,11 @@
+﻿Número;Regras de Negócio
+RN001;O acesso só é liberado se o cadastro estiver ativo e o vínculo vigente (data de vencimento igual ou posterior ao dia da leitura).
+RN002;Toda tentativa de acesso, liberada, negada ou com erro de leitura, gera um registro com data, hora, usuário, dispositivo e local.
+RN003;O acesso a um local só é liberado se o perfil do usuário tiver permissão para esse local.
+RN004;Carteirinha bloqueada, cancelada ou vencida nega o acesso, mesmo que a biometria seja reconhecida.
+RN005;A biometria só é cadastrada com consentimento do titular e armazenada exclusivamente como template cifrado.
+RN006;CPF, RA e e-mail institucional são únicos no cadastro de usuários.
+RN007;Dispositivo com status não operante não valida acessos e deve aparecer como alerta para a TI.
+RN008;"Cada módulo é acessado apenas por operadores com o papel adequado: Secretaria cadastra usuários; TI cadastra dispositivos e locais; Segurança define perfis e permissões."
+RN009;"Registros de acesso não podem ser editados nem excluídos; apenas consultados."
+RN010;"Usuário com vínculo inativo é sempre negado, com o motivo ""vínculo inativo"" registrado."
